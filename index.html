@@ -294,7 +294,7 @@ const KEY_PREFIX='sisi-cloud-config-v1';
 const CLOUD_CONF=window.SISI_CLOUD_CONFIG||{};
 const gate=document.getElementById('cloudGate');
 let cfg={url:(CLOUD_CONF.url||''),anonKey:(CLOUD_CONF.publishableKey||'')};
-try{if(!cfg.url){const cached=JSON.parse(localStorage.getItem(KEY_PREFIX)||'{}');cfg=cached.url?cached:cfg}}catch(e){}
+try{if(!cfg.anonKey){const cached=JSON.parse(localStorage.getItem(KEY_PREFIX)||'{}');cfg=cached.url?cached:cfg}}catch(e){}
 const gateHeader=()=>`<div class="gateTag">SISI · KITCHEN OPERATIONS</div><h1 class="gateBrand">SiSi Kitchen Hub</h1><p style="margin:5px 0 19px"><strong>FAIL TO PREPARE, PREPARE TO FAIL</strong></p>`;
 const gateShow=(body)=>{gate.className='show';gate.innerHTML=`<div class="gateCard">${gateHeader()}${body}<p class="tiny">Each staff member uses their own email and password. Never share passwords or Supabase secret/service-role keys.</p></div>`};
 const gateHide=()=>{gate.className='';gate.innerHTML=''};
